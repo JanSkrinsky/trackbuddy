@@ -34,3 +34,26 @@ API umožňuje provádět operace CRUD (Create, Read, Update, Delete) nad oběma
 cd backend
 npm install
 npm run start
+
+## Frontend
+
+Frontendová část aplikace slouží jako uživatelské rozhraní pro práci s backendovým API.
+
+Použité technologie:
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
+
+Spuštění frontendu:
+
+cd frontend
+npm install
+npm run dev
+
+Frontend je dostupný na adrese http://localhost:5173
+
+## Autor
+
+Jan Skrinsky
