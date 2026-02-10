@@ -1,65 +1,91 @@
-# TrackBuddy
+TrackBuddy
 
 TrackBuddy je semestrální projekt zaměřený na návrh a implementaci webové aplikace pro evidenci sportovních aktivit.
 Aplikace umožňuje správu míst, kde jsou aktivity vykonávány, a jednotlivých sportovních aktivit, které jsou s těmito místy propojeny.
 
-Projekt je rozdělen na backendovou a frontendovou část, které jsou vyvíjeny v jednom veřejném GitHub repozitáři.
+Projekt je realizován jako full-stack webová aplikace s oddělenou backendovou a frontendovou částí, vyvíjenou v jednom veřejném GitHub repozitáři.
 
---------------------------------------------------
+Přehled aplikace
 
-POPIS APLIKACE
+Aplikace pracuje se dvěma hlavními datovými entitami:
 
-Aplikace pracuje se dvěma datovými entitami:
+Location – reprezentuje místo, kde jsou vykonávány sportovní aktivity
 
-- Location – reprezentuje místo, kde jsou vykonávány sportovní aktivity
-- Activity – reprezentuje jednotlivé sportovní aktivity
+Activity – reprezentuje jednotlivé sportovní aktivity
 
-Mezi entitami existuje vztah 1:N, kdy jedno místo může obsahovat více aktivit, zatímco každá aktivita je přiřazena právě k jednomu místu.
+Mezi entitami existuje vztah 1 : N:
 
---------------------------------------------------
+jedno Location může obsahovat více Activity
 
-BACKEND
+každá Activity je přiřazena právě k jednomu Location
 
-Backendová část aplikace poskytuje REST API pro správu datových entit Location a Activity.
-API umožňuje provádět operace CRUD (Create, Read, Update, Delete) nad oběma entitami.
+Struktura projektu
+trackBuddy/
+├── backend/        # Backendová část (REST API)
+├── frontend/       # Frontendová část (uživatelské rozhraní)
+└── README.md       # Projektová dokumentace
 
-Použité technologie:
-- Node.js
-- Express.js
-- SQLite
+Backend
 
-Spuštění backendu:
+Backendová část aplikace poskytuje REST API pro správu entit Location a Activity.
+API podporuje kompletní CRUD operace (Create, Read, Update, Delete) pro obě entity.
+
+Použité technologie
+
+Node.js
+
+Express.js
+
+SQLite
+
+Spuštění backendu
 cd backend
 npm install
 npm run start
 
+
 Backend běží na adrese:
-http://localhost:3000
+👉 http://localhost:3000
 
---------------------------------------------------
+Frontend
 
-FRONTEND
+Frontendová část aplikace slouží jako uživatelské rozhraní pro komunikaci s backendovým API a správu sportovních aktivit a míst.
 
-Frontendová část aplikace slouží jako uživatelské rozhraní pro práci s backendovým API.
+Použité technologie
 
-Použité technologie:
-- React
-- Vite
-- JavaScript
-- HTML
-- CSS
+React
 
-Spuštění frontendu:
+Vite
+
+JavaScript
+
+HTML
+
+CSS
+
+Spuštění frontendu
 cd frontend
 npm install
 npm run dev
 
+
 Frontend je dostupný na adrese:
-http://localhost:5173
+👉 http://localhost:5173
 
---------------------------------------------------
+Funkcionalita
 
-AUTOR
+Správa míst (Location)
+
+vytvoření, zobrazení, úprava a mazání
+
+Správa aktivit (Activity)
+
+vytvoření, zobrazení, úprava a mazání
+
+Vazba aktivit na konkrétní místo
+
+Komunikace mezi frontendem a backendem pomocí REST API
+
+Autor
 
 Jan Skrinsky
-
