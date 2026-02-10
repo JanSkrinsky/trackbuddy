@@ -1,91 +1,170 @@
-TrackBuddy
+# TrackBuddy
+*Full-stack application for sport activity tracking*
 
-TrackBuddy je semestrální projekt zaměřený na návrh a implementaci webové aplikace pro evidenci sportovních aktivit.
-Aplikace umožňuje správu míst, kde jsou aktivity vykonávány, a jednotlivých sportovních aktivit, které jsou s těmito místy propojeny.
+---
 
-Projekt je realizován jako full-stack webová aplikace s oddělenou backendovou a frontendovou částí, vyvíjenou v jednom veřejném GitHub repozitáři.
+## Overview
 
-Přehled aplikace
+TrackBuddy is a full-stack web application for tracking sport activities such as running and cycling.  
+The project consists of a **backend REST API** and a **frontend single-page application**.
 
-Aplikace pracuje se dvěma hlavními datovými entitami:
+The backend is responsible for data persistence and business logic,  
+while the frontend provides a user-friendly interface for managing activities and locations.
 
-Location – reprezentuje místo, kde jsou vykonávány sportovní aktivity
+---
 
-Activity – reprezentuje jednotlivé sportovní aktivity
+## Project Architecture
 
-Mezi entitami existuje vztah 1 : N:
+The project is divided into two main parts:
 
-jedno Location může obsahovat více Activity
+- **Backend** – REST API built with Node.js and Express
+- **Frontend** – Single-page application built with React
 
-každá Activity je přiřazena právě k jednomu Location
+---
 
-Struktura projektu
-trackBuddy/
-├── backend/        # Backendová část (REST API)
-├── frontend/       # Frontendová část (uživatelské rozhraní)
-└── README.md       # Projektová dokumentace
+## Repository Structure
 
-Backend
+    /
+    ├── backend/          # Node.js / Express REST API
+    ├── frontend/         # React single-page application
+    └── README.md         # Project documentation
 
-Backendová část aplikace poskytuje REST API pro správu entit Location a Activity.
-API podporuje kompletní CRUD operace (Create, Read, Update, Delete) pro obě entity.
+---
 
-Použité technologie
+## Backend
 
-Node.js
+The backend provides a RESTful API for managing sport activities and locations.
 
-Express.js
+### Responsibilities
+- Managing sport locations
+- Managing sport activities (running, cycling)
+- Input validation
+- Average speed calculation
+- Data persistence in SQLite
 
-SQLite
+### Technology Stack
+- Node.js
+- Express
+- SQLite (better-sqlite3)
+- cors
 
-Spuštění backendu
-cd backend
-npm install
-npm run start
+### Main API Endpoints
 
+#### Health
+    GET /api/health
 
-Backend běží na adrese:
-👉 http://localhost:3000
+#### Locations
+    GET /api/locations
+    GET /api/locations/:id
+    POST /api/locations
+    PUT /api/locations/:id
+    DELETE /api/locations/:id
+    GET /api/locations/:id/activities
 
-Frontend
+#### Activities
+    GET /api/activities
+    GET /api/activities/:id
+    POST /api/activities
+    PUT /api/activities/:id
+    DELETE /api/activities/:id
 
-Frontendová část aplikace slouží jako uživatelské rozhraní pro komunikaci s backendovým API a správu sportovních aktivit a míst.
+---
 
-Použité technologie
+## Frontend
 
-React
+The frontend is a single-page application that communicates with the backend API.
 
-Vite
+### Features
+- View list of sport activities
+- Create new activities
+- Edit existing activities
+- Select sport locations
+- Filter activities by type, location and date
 
-JavaScript
+### Technology Stack
+- React
+- Vite
+- Bootstrap 5
+- React Bootstrap
 
-HTML
+---
 
-CSS
+## Frontend ↔ Backend Communication
 
-Spuštění frontendu
-cd frontend
-npm install
-npm run dev
+The frontend communicates with the backend via REST API requests.
 
+- Backend runs on:
+  
+      http://localhost:3000
 
-Frontend je dostupný na adrese:
-👉 http://localhost:5173
+- Frontend runs on:
+  
+      http://localhost:5173
 
-Funkcionalita
+---
 
-Správa míst (Location)
+## Getting Started
 
-vytvoření, zobrazení, úprava a mazání
+### Prerequisites
+- Node.js **v18+**
+- npm
 
-Správa aktivit (Activity)
+---
 
-vytvoření, zobrazení, úprava a mazání
+### Installation
 
-Vazba aktivit na konkrétní místo
+Install backend dependencies:
 
-Komunikace mezi frontendem a backendem pomocí REST API
+    cd backend
+    npm install
 
-Autor
+Install frontend dependencies:
 
-Jan Skrinsky
+    cd frontend
+    npm install
+
+---
+
+### Running the Application
+
+Start backend server:
+
+    cd backend
+    npm start
+
+or development mode:
+
+    npm run dev
+
+Start frontend application:
+
+    cd frontend
+    npm run dev
+
+---
+
+## Validation Rules (Backend)
+
+- Dates must be in ISO format (YYYY-MM-DD)
+- Future dates are not allowed
+- Distance and duration must be greater than zero
+- Locations must exist before assigning activities
+- Location names are unique (case-insensitive)
+
+---
+
+## Future Enhancements
+
+- User authentication
+- Activity statistics and charts
+- Pagination
+- Export data to CSV
+- Improved UI for location management
+
+---
+
+## Notes
+
+Each part of the project contains its own `README.md` with more detailed documentation:
+- `backend/README.md`
+- `frontend/README.md`
