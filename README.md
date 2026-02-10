@@ -24,7 +24,7 @@ The project is divided into two main parts:
 
 ## Repository Structure
 
-    /
+    
     ├── backend/          # Node.js / Express REST API
     ├── frontend/         # React single-page application
     └── README.md         # Project documentation
