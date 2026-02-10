@@ -54,15 +54,20 @@ The backend is designed to be consumed by a frontend single-page application.
 
     GET /api/locations
     Returns all locations
+
     GET /api/locations/:id
     Returns location by ID
+
     POST /api/locations
     Creates a new location
+
     PUT /api/locations/:id
     Updates an existing location
+
     DELETE /api/locations/:id
     Deletes a location
     (blocked if activities exist)
+
     GET /api/locations/:id/activities
     Returns all activities for a location
 
@@ -72,12 +77,16 @@ The backend is designed to be consumed by a frontend single-page application.
 
     GET /api/activities
     Returns all activities
+
     GET /api/activities/:id
     Returns activity by ID
+
     POST /api/activities
     Creates a new activity
+
     PUT /api/activities/:id
     Updates an existing activity
+
     DELETE /api/activities/:id
     Deletes an activity
 
