@@ -84,7 +84,7 @@ The frontend is a single-page application that communicates with the backend API
 ### Technology Stack
 - React
 - Vite
-- Bootstrap 5
+- Bootstrap 
 - React Bootstrap
 
 ---
