@@ -166,5 +166,5 @@ Start frontend application:
 ## Notes
 
 Each part of the project contains its own `README.md` with more detailed documentation:
-- `backend/README.md`
-- `frontend/README.md`
+- `server/README.md`
+- `client/README.md`
