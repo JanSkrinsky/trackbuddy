@@ -32,16 +32,16 @@ The application communicates with a REST API backend and focuses on simplicity a
 ## Project Structure
 
     client/
-    ├── public/               # Static assets
+    ├── public/                         # Static assets
     ├── src/
-    │   ├── App.jsx           # Main application component
-    │   ├── Header.jsx        # Application header
-    │   ├── ActivityList.jsx  # Activity list view
-    │   ├── Activity.jsx      # Single activity item
-    │   ├── ActivityModal.jsx # Modal form for create / edit
-    │   ├── ActivityListProvider.jsx # Activities context
-    │   ├── LocationListProvider.jsx # Locations context
-    │   └── main.jsx          # Application entry point
+    │   ├── App.jsx                     # Main application component
+    │   ├── Header.jsx                  # Application header
+    │   ├── ActivityList.jsx            # Activity list view
+    │   ├── Activity.jsx                # Single activity item
+    │   ├── ActivityModal.jsx           # Modal form for create / edit
+    │   ├── ActivityListProvider.jsx    # Activities context
+    │   ├── LocationListProvider.jsx    # Locations context
+    │   └── main.jsx                    # Application entry point
     ├── index.html
     ├── vite.config.js
     └── package.json
